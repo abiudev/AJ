@@ -6,9 +6,24 @@ import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
 
+interface SubLink {
+  href: string;
+  key: string;
+  label: string;
+  description?: string;
+}
+
+interface NavLink {
+  href?: string;
+  key: string;
+  label: string;
+  subLinks?: SubLink[];
+  description?: string;
+}
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,10 +38,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out  bg-white !sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
         scrolled
-          ? "bg-white sm:bg-sky-950 !important md:bg-sky-950 lg:bg-white xl:bg-white"
-          : "bg-sky-950 sm:bg-white !important md:bg-white lg:bg-sky-950 xl:bg-sky-950"
+          ? "bg-white sm:bg-sky-950  md:bg-sky-950 lg:bg-white xl:bg-white"
+          : "bg-sky-950 sm:bg-white  md:bg-white lg:bg-sky-950 xl:bg-sky-950"
       } flex items-center justify-start max-container py-1`}
     >
       <Link href="/">
@@ -40,7 +55,7 @@ const Navbar = () => {
       </Link>
 
       <ul className="hidden lg:flex text-black h-full gap-6 ml-20">
-        {NAV_LINKS.map((link) => (
+        {NAV_LINKS.map((link: NavLink) => (
           <li
             key={link.key}
             className={`relative regular-16 flex p-0.5 items-center cursor-pointer hover:underline h-full ${
@@ -48,8 +63,7 @@ const Navbar = () => {
             }`}
             onMouseEnter={() => setActiveDropdown(link.key)}
           >
-            {/* For regular links */}
-            {!link.subLinks && (
+            {!link.subLinks && link.href && (
               <div className="flex flex-col">
                 <Link href={link.href}>{link.label}</Link>
                 {link.description && (
@@ -64,7 +78,6 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* For dropdown links */}
             {link.subLinks && (
               <div className="relative h-full">
                 <div className="flex flex-col">
@@ -85,7 +98,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="ml-auto bg-orange-500  p-2  rounded-md sm:mr-6">
+      <div className="ml-auto bg-orange-500 p-2 rounded-md sm:mr-6">
         <Button
           type="button"
           icon=""
@@ -111,7 +124,7 @@ const Navbar = () => {
         >
           <div className="w-full py-8 ">
             <div className="w-full grid grid-cols-3 grid-rows-2 gap-8 px-8">
-              {NAV_LINKS.find((link) => link.key === "services")?.subLinks.map(
+              {NAV_LINKS.find((link) => link.key === "services")?.subLinks?.map(
                 (subLink) => (
                   <Link
                     href={subLink.href}
