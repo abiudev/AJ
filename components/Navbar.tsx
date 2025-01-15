@@ -10,7 +10,6 @@ interface SubLink {
   href: string;
   key: string;
   label: string;
-<<<<<<< HEAD
   description?: string;
 }
 
@@ -20,8 +19,7 @@ interface NavLink {
   label: string;
   subLinks?: SubLink[];
   description?: string;
-=======
-  description?: string; 
+   
 }
 
 interface NavLink {
@@ -30,7 +28,6 @@ interface NavLink {
   label: string;
   subLinks?: SubLink[]; 
   description?: string; 
->>>>>>> e819dcc6aaa65560be07af2ff5875986cd8f27c2
 }
 
 const Navbar = () => {
