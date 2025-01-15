@@ -21,14 +21,6 @@ interface NavLink {
   description?: string;
 }
 
-interface NavLink {
-  href?: string;
-  key: string;
-  label: string;
-  subLinks?: SubLink[];
-  description?: string;
-}
-
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
