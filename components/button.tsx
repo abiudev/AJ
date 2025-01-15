@@ -2,8 +2,9 @@ type ButtonProps = {
   type: "button" | "submit";
   icon?: string;
   label: string;
+  className?: string;
 };
-const Button = ({ type, icon, label }: ButtonProps) => {
+const Button = ({ type, icon, label, className }: ButtonProps) => {
   return (
     <button type={type}>
       {icon && <span className="icon-class">{icon}</span>}
