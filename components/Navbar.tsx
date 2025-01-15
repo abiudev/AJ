@@ -10,6 +10,7 @@ interface SubLink {
   href: string;
   key: string;
   label: string;
+<<<<<<< HEAD
   description?: string;
 }
 
@@ -19,6 +20,17 @@ interface NavLink {
   label: string;
   subLinks?: SubLink[];
   description?: string;
+=======
+  description?: string; 
+}
+
+interface NavLink {
+  href?: string; 
+  key: string;
+  label: string;
+  subLinks?: SubLink[]; 
+  description?: string; 
+>>>>>>> e819dcc6aaa65560be07af2ff5875986cd8f27c2
 }
 
 const Navbar = () => {
@@ -63,6 +75,10 @@ const Navbar = () => {
             }`}
             onMouseEnter={() => setActiveDropdown(link.key)}
           >
+<<<<<<< HEAD
+=======
+           
+>>>>>>> e819dcc6aaa65560be07af2ff5875986cd8f27c2
             {!link.subLinks && link.href && (
               <div className="flex flex-col">
                 <Link href={link.href}>{link.label}</Link>
@@ -78,6 +94,10 @@ const Navbar = () => {
               </div>
             )}
 
+<<<<<<< HEAD
+=======
+          
+>>>>>>> e819dcc6aaa65560be07af2ff5875986cd8f27c2
             {link.subLinks && (
               <div className="relative h-full">
                 <div className="flex flex-col">

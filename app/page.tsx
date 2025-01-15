@@ -1,4 +1,8 @@
 "use client";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e819dcc6aaa65560be07af2ff5875986cd8f27c2
 import Image from "next/image";
 
 const Page = () => {
