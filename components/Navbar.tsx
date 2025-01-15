@@ -6,13 +6,19 @@ import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
 
-// Define the type for NAV_LINKS
-interface NavLink {
+interface SubLink {
   href: string;
   key: string;
   label: string;
-  subLinks?: { href: string; key: string; label: string }[];
-  description?: string; // Make description optional
+  description?: string; 
+}
+
+interface NavLink {
+  href?: string; 
+  key: string;
+  label: string;
+  subLinks?: SubLink[]; 
+  description?: string; 
 }
 
 const Navbar = () => {
@@ -57,8 +63,8 @@ const Navbar = () => {
             }`}
             onMouseEnter={() => setActiveDropdown(link.key)}
           >
-            {/* For regular links */}
-            {!link.subLinks && (
+           
+            {!link.subLinks && link.href && (
               <div className="flex flex-col">
                 <Link href={link.href}>{link.label}</Link>
                 {link.description && (
@@ -73,7 +79,7 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* For dropdown links */}
+          
             {link.subLinks && (
               <div className="relative h-full">
                 <div className="flex flex-col">
