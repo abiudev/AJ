@@ -8,8 +8,7 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-
+const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
