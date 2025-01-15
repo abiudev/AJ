@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 const Button = ({ type, icon, label, className }: ButtonProps) => {
   return (
-    <button type={type}>
+    <button type={type} className={className}>
       {icon && <span className="icon-class">{icon}</span>}
       <span className="bold-16 whitespace-nowrap">{label}</span>{" "}
     </button>
