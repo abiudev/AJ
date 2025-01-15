@@ -6,9 +6,19 @@ import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
 
+// Define the type for NAV_LINKS
+interface NavLink {
+  href: string;
+  key: string;
+  label: string;
+  subLinks?: { href: string; key: string; label: string }[];
+  description?: string; // Make description optional
+}
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -39,7 +49,7 @@ const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
       </Link>
 
       <ul className="hidden lg:flex text-black h-full gap-6 ml-20">
-        {NAV_LINKS.map((link) => (
+        {NAV_LINKS.map((link: NavLink) => (
           <li
             key={link.key}
             className={`relative regular-16 flex p-0.5 items-center cursor-pointer hover:underline h-full ${
@@ -84,7 +94,7 @@ const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
         ))}
       </ul>
 
-      <div className="ml-auto bg-orange-500  p-2  rounded-md sm:mr-6">
+      <div className="ml-auto bg-orange-500 p-2 rounded-md sm:mr-6">
         <Button
           type="button"
           icon=""
@@ -110,7 +120,7 @@ const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
         >
           <div className="w-full py-8 ">
             <div className="w-full grid grid-cols-3 grid-rows-2 gap-8 px-8">
-              {NAV_LINKS.find((link) => link.key === "services")?.subLinks.map(
+              {NAV_LINKS.find((link) => link.key === "services")?.subLinks?.map(
                 (subLink) => (
                   <Link
                     href={subLink.href}
