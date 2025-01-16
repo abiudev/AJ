@@ -52,7 +52,6 @@ export const NAV_LINKS = [
 
   { href: "/pricing", key: "pricing", label: "Pricing" },
   { href: "/contact-us", key: "contact_us", label: "Contact Us" },
-  {},
 ];
 export const Services = [
   {
