@@ -14,9 +14,12 @@ interface Services {
   description: string;
   image: string;
 }
+type ServiceKey = keyof typeof serviceFeatures;
 
 export default function ServicesSection() {
-  const [selectedService, setSelectedService] = useState(Services[0].key);
+  const [selectedService, setSelectedService] = useState<ServiceKey>(
+    Services[0].key as ServiceKey
+  );
   const currentService = Services.find((s) => s.key === selectedService);
   const features = serviceFeatures[selectedService] || [];
 
