@@ -50,7 +50,7 @@ const Navbar = () => {
           alt="logo"
           width={200}
           height={200}
-          className="ml-auto sm:ml-2 mt-2 w-auto h-[50px] transition-all duration-300"
+          className="mt-2 lg:ml-48 sm:ml-0   w-auto h-[50px] transition-all duration-300"
         />
       </Link>
 
