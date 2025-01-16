@@ -1,18 +1,31 @@
 "use client";
 import ServicesSection from "@/components/Services";
 import Image from "next/image";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Page = () => {
+  const [text] = useTypewriter({
+    words: ["CAPTURE", "CREATE", "CONNECT"],
+    loop: {},
+  });
   return (
     <>
       <section className="h-auto  bg-sky-950 flex flex-col md:flex-row items-center justify-between gap-8 md:px-8 lg:px-16 pt-4 pb-16">
         <div className="text-white ml-32 space-y-4 w-full mt-24 sm: mr-28 justify-center items-center  md:w-1/2 lg:w-2/5 px-4 text-center md:text-left  -mt-10">
-          <h2 className="text-3xl  font-semibold">Our Services</h2>
+          <h2 className="text-3xl  font-semibold">
+            WE{" "}
+            <span className="text-orange-500 text-decoration: underline ">
+              {text}
+            </span>
+            <Cursor />
+          </h2>
           <p className="text-lg">
-            Explore our services that cater to your needs. sm: 640px (Small
-            devices like phones) md: 768px (Medium devices like tablets) lg:
-            1024px (Large devices like laptops) xl: 1280px (Extra large screens)
-            2xl: 1536px (Very large screens)
+            At <span className="text-orange-400  text-2xl"> AJ Apex Media</span>{" "}
+            Apex Media we, offer exceptional services tailored to your unique
+            needs, ensuring quality, creativity, and professionalism in every
+            project. Our team of experts is dedicated to delivering results that
+            exceed expectations. With years of experience and a passion for what
+            we do, we guarantee an unforgettable experience.
           </p>
           <button className="bg-blue-500 text-white px-6 py-3 rounded-md mt-4">
             Learn More
@@ -28,8 +41,9 @@ const Page = () => {
           />
         </div>
       </section>
-
-      <ServicesSection />
+      <section>
+        <ServicesSection />
+      </section>
     </>
   );
 };
