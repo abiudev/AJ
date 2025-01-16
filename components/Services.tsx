@@ -34,7 +34,7 @@ export default function ServicesSection() {
           {Services.map((service) => (
             <motion.button
               key={service.key}
-              onClick={() => setSelectedService(service.key)}
+              onClick={() => setSelectedService(service.key as ServiceKey)}
               className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                 selectedService === service.key
                   ? "bg-orange-500 text-white shadow-lg"
