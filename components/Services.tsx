@@ -37,8 +37,8 @@ export default function ServicesSection() {
               onClick={() => setSelectedService(service.key as ServiceKey)}
               className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                 selectedService === service.key
-                  ? "bg-orange-500 text-white shadow-lg"
-                  : "bg-white text-gray-600 hover:bg-orange-50"
+                  ? "bg-orange-500  text-white shadow-lg"
+                  : "bg-white text-gray-600 border-2 border-orange-100 hover:bg-orange-50"
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

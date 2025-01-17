@@ -1,5 +1,7 @@
 "use client";
+import Footer from "@/components/Footer";
 import ServicesSection from "@/components/Services";
+import WhyChooseUs from "@/components/whyUs";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
@@ -10,8 +12,8 @@ const Page = () => {
   });
   return (
     <>
-      <section className="h-auto  bg-sky-950 flex flex-col md:flex-row items-center justify-between gap-8 md:px-8 lg:px-16 pt-4 pb-16">
-        <div className="text-white ml-32 space-y-4 w-full mt-24 sm: mr-28 justify-center items-center  md:w-1/2 lg:w-2/5 px-4 text-center md:text-left  -mt-10">
+      <section className="h-auto bg-sky-950 flex flex-col pt-32 sm:pt-48 md:pt-32 lg:pt-16 pb-16 md:flex-row items-center justify-between gap-8 md:px-8 lg:px-16">
+        <div className="text-white ml-32 space-y-4 w-full  sm: mr-28 justify-center items-center  md:w-1/2 lg:w-2/5 px-4 text-center md:text-left  -mt-10">
           <h2 className="text-3xl  font-semibold">
             WE{" "}
             <span className="text-orange-500 text-decoration: underline ">
@@ -43,6 +45,9 @@ const Page = () => {
       </section>
       <section>
         <ServicesSection />
+      </section>
+      <section>
+        <WhyChooseUs />
       </section>
     </>
   );
