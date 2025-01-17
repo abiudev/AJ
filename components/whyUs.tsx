@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-12 lg:mt-0">
-          {guarantees.map((guarantee, header, index) => (
+          {guarantees.map((guarantee, index) => (
             <GuaranteeCard
               key={index}
               header={guarantee.header}

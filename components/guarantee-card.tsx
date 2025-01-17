@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 interface GuaranteeCardProps {
-  percentage: string;
   text: string;
   delay: number;
   header: string;
