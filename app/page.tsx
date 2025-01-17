@@ -3,6 +3,7 @@
 import ServicesSection from "@/components/Services";
 import WhyChooseUs from "@/components/whyUs";
 import Image from "next/image";
+
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Page = () => {

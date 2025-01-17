@@ -5,6 +5,7 @@ import Image from "next/image";
 import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
+import { FaAngleDown } from "react-icons/fa6";
 
 interface SubLink {
   href: string;
@@ -65,7 +66,10 @@ const Navbar = () => {
           >
             {!link.subLinks && link.href && (
               <div className="flex flex-col">
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href}>
+                  {link.label}
+                  {link.key === "services" && <FaAngleDown />}
+                </Link>
                 {link.description && (
                   <span
                     className={`text-xs ${

@@ -2,29 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import GuaranteeCard from "./guarantee-card";
-
-export const guarantees = [
-  {
-    header: "Unmatched Expertise",
-
-    text: "Our team comprises industry professionals with years of experience in their respective fields. We bring a deep understanding of trends, tools, and best practices to every project. This ensures you receive top-quality services tailored to your specific needs.",
-  },
-  {
-    header: "Commitment to Quality",
-
-    text: "We are dedicated to delivering exceptional results that meet the highest standards. Our rigorous quality checks ensure that every detail is perfected. Your satisfaction drives our commitment to excellence.",
-  },
-  {
-    header: "Personalized Solutions",
-
-    text: "Every client and project is unique, and so is our approach. We take the time to understand your goals and customize our services to achieve them. This ensures you get a solution that’s perfectly aligned with your vision.",
-  },
-  {
-    header: "Timely Delivery",
-
-    text: "Meeting deadlines is a cornerstone of our work ethic. We prioritize efficient project management to ensure on-time delivery without compromising quality. Your time is valuable, and we respect that.",
-  },
-];
+import { guarantees } from "@/constants";
 
 export default function WhyChooseUs() {
   return (
