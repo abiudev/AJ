@@ -8,7 +8,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 const Page = () => {
   const [text] = useTypewriter({
     words: ["CAPTURE", "CREATE", "CONNECT"],
-    loop: {},
+    loop: true,
   });
   return (
     <>
