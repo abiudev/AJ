@@ -1,5 +1,5 @@
 "use client";
-import Footer from "@/components/Footer";
+
 import ServicesSection from "@/components/Services";
 import WhyChooseUs from "@/components/whyUs";
 import Image from "next/image";
