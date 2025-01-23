@@ -7,42 +7,42 @@ export const NAV_LINKS = [
 
     subLinks: [
       {
-        href: "/services/Photography",
+        href: "/Services/photography",
         key: "photography",
         label: "Photography",
         description:
           "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
       },
       {
-        href: "/services/Videography",
+        href: "/Services/videography",
         key: "videography",
         label: "Videography",
         description:
           "Our videography services bring your events to life, providing captivating videos that tell your story with precision and creativity.",
       },
       {
-        href: "/services/Corporate Event Management",
+        href: "/Services/corporate",
         key: "corporateEventManagement",
         label: "Corporate Event Management",
         description:
           "We specialize in organizing and managing corporate events, ensuring flawless execution and memorable experiences for your attendees.",
       },
       {
-        href: "/services/Corporate Event Coverage",
+        href: "/Services/corporate",
         key: " eventCoverage",
         label: "Corporate Event Coverage",
         description:
           "Our corporate event coverage services ensure that every important moment is professionally documented for your company’s archive.",
       },
       {
-        href: "/services/Web Development",
+        href: "Services/webdev",
         key: "webDevelopment",
         label: "Web Development",
         description:
           "We design and develop custom websites that are responsive, user-friendly, and tailored to your business goals.",
       },
       {
-        href: "/services/Rapporteur Services",
+        href: "/Services/rapporteur",
         key: "rapporteurServices",
         label: "Rapporteur Services",
         description:
@@ -96,7 +96,7 @@ export const Services = [
     image: "/webdev.png",
   },
   {
-    href: "/services/Rapporteur Services",
+    href: "/services/rapporteur",
     key: "rapporteurServices",
     label: "Rapporteur Services",
     description:

@@ -5,13 +5,13 @@ import Image from "next/image";
 import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
-import { FaAngleDown } from "react-icons/fa6";
+import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 
 interface SubLink {
   href: string;
   key: string;
   label: string;
-  description?: string;
+  description?: string; // Added description
 }
 
 interface NavLink {
@@ -19,11 +19,11 @@ interface NavLink {
   key: string;
   label: string;
   subLinks?: SubLink[];
-  description?: string;
 }
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
@@ -39,10 +39,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out  bg-white !sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out bg-white !sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
         scrolled
-          ? "bg-white sm:bg-sky-950  md:bg-sky-950 lg:bg-white xl:bg-white"
-          : "bg-sky-950 sm:bg-white  md:bg-white lg:bg-sky-950 xl:bg-sky-950"
+          ? "bg-white sm:bg-sky-950 md:bg-sky-950 lg:bg-white xl:bg-white"
+          : "bg-sky-950 sm:bg-white md:bg-white lg:bg-sky-950 xl:bg-sky-950"
       } flex items-center justify-start max-container py-1`}
     >
       <Link href="/">
@@ -51,7 +51,7 @@ const Navbar = () => {
           alt="logo"
           width={200}
           height={200}
-          className="mt-2 lg:ml-48 sm:ml-0   w-auto h-[50px] transition-all duration-300"
+          className="mt-2 lg:ml-48 sm:ml-0 w-auto h-[50px] transition-all duration-300"
         />
       </Link>
 
@@ -59,45 +59,48 @@ const Navbar = () => {
         {NAV_LINKS.map((link: NavLink) => (
           <li
             key={link.key}
-            className={`relative regular-16 flex p-0.5 items-center cursor-pointer hover:underline h-full ${
+            className={`relative regular-16 flex items-center cursor-pointer hover:underline h-full ${
               scrolled ? "text-gray-700" : "text-white"
             }`}
-            onMouseEnter={() => setActiveDropdown(link.key)}
           >
-            {!link.subLinks && link.href && (
-              <div className="flex flex-col">
-                <Link href={link.href}>
-                  {link.label}
-                  {link.key === "services" && <FaAngleDown />}
-                </Link>
-                {link.description && (
-                  <span
-                    className={`text-xs ${
-                      scrolled ? "text-gray-500" : "text-gray-300"
-                    }`}
-                  >
-                    {link.description}
-                  </span>
-                )}
-              </div>
-            )}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown(link.key)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link href={link.href || "#"} className="flex items-center">
+                {link.label}
+                {link.key === "services" && <IoIosArrowDown className="ml-1" />}
+              </Link>
 
-            {link.subLinks && (
-              <div className="relative h-full">
-                <div className="flex flex-col">
-                  <span>{link.label}</span>
-                  {link.description && (
-                    <span
-                      className={`text-xs ${
-                        scrolled ? "text-gray-500" : "text-gray-300"
-                      }`}
-                    >
-                      {link.description}
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
+              {link.key === "services" &&
+                activeDropdown === link.key &&
+                link.subLinks && (
+                  <div className="absolute top-full left-0 w-screen bg-white shadow-lg z-20">
+                    {/* Content Wrapper */}
+                    <div className="grid grid-cols-3 gap-8 p-8">
+                      {link.subLinks.map((subLink) => (
+                        <div
+                          key={subLink.key}
+                          className="group p-4 transition-all duration-200 hover:bg-gray-50 hover:shadow-md rounded-lg"
+                        >
+                          <Link
+                            href={subLink.href}
+                            className="font-medium text-lg text-gray-800 group-hover:text-blue-600"
+                          >
+                            {subLink.label}
+                          </Link>
+                          {subLink.description && (
+                            <p className="text-sm text-gray-500 mt-2 group-hover:text-gray-700">
+                              {subLink.description}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+            </div>
           </li>
         ))}
       </ul>
@@ -105,10 +108,9 @@ const Navbar = () => {
       <div className="ml-auto bg-orange-500 p-2 rounded-md sm:mr-6">
         <Button
           type="button"
-          icon=""
           label="Get a Quote"
           className={`${
-            scrolled ? "text-white " : " text-sky-950"
+            scrolled ? "text-white" : "text-sky-950"
           } py-1 px-3 text-sm`}
         />
       </div>
@@ -119,35 +121,60 @@ const Navbar = () => {
         width={24}
         height={24}
         className="inline-block cursor-pointer sm:mr-2 lg:hidden ml-2"
+        onClick={() => setMenuOpen(true)}
       />
 
-      {activeDropdown === "services" && (
+      {menuOpen && (
         <div
-          className="fixed top-[68px] left-0 right-0 bg-white shadow-lg overflow-x-auto"
-          onMouseLeave={() => setActiveDropdown(null)}
+          className="fixed top-0 right-0 w-4/5 max-w-xs bg-white h-full z-20 shadow-lg p-4 lg:hidden overflow-y-auto"
+          style={{
+            boxShadow: "rgba(0, 0, 0, 0.2) 0px 2px 8px",
+            maxHeight: "calc(65vh - 20px)",
+          }}
         >
-          <div className="w-full py-8 ">
-            <div className="w-full grid grid-cols-3 grid-rows-2 gap-8 px-8">
-              {NAV_LINKS.find((link) => link.key === "services")?.subLinks?.map(
-                (subLink) => (
-                  <Link
-                    href={subLink.href}
-                    key={subLink.key}
-                    className="group block p-2 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:shadow-md"
-                  >
-                    <div className="font-medium text-lg text-gray-800 group-hover:text-blue-600 transition-colors">
-                      {subLink.label}
-                    </div>
-                    {subLink.description && (
-                      <p className="text-gray-500 mt-2 group-hover:text-gray-700">
-                        {subLink.description}
-                      </p>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-gray-800 text-xl absolute top-4 right-4"
+          >
+            <IoMdClose />
+          </button>
+
+          <ul className="mt-8 space-y-8 pb-16">
+            {NAV_LINKS.map((link: NavLink) => (
+              <li key={link.key} className="text-gray-800">
+                {link.subLinks ? (
+                  <div>
+                    <button
+                      className="flex justify-between items-center w-full"
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === link.key ? null : link.key
+                        )
+                      }
+                    >
+                      {link.label} <IoIosArrowDown />
+                    </button>
+                    {activeDropdown === link.key && link.subLinks && (
+                      <ul className="mt-2 space-y-2 pl-4">
+                        {link.subLinks.map((subLink) => (
+                          <li key={subLink.key}>
+                            <Link
+                              href={subLink.href}
+                              className="text-gray-600 hover:text-gray-800"
+                            >
+                              {subLink.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     )}
-                  </Link>
-                )
-              )}
-            </div>
-          </div>
+                  </div>
+                ) : (
+                  <Link href={link.href || "#"}>{link.label}</Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </nav>
