@@ -72,11 +72,11 @@ export default function Page() {
                     <p className="text-slate-600">
                       We design and organize corporate retreats and meetings
                       that provide your team with an opportunity to strategize
-                      and recharge. Whether it's a leadership summit, strategy
+                      and recharge. Whether it is a leadership summit, strategy
                       session, or relaxing retreat, we handle all planning
                       details to ensure a productive and enjoyable experience
                       for your team. From location scouting to catering and
-                      entertainment, we've got you covered.
+                      entertainment, we have got you covered.
                     </p>
                   </div>
                 </div>
