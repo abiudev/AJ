@@ -1,8 +1,10 @@
 type ButtonProps = {
   type: "button" | "submit";
+  href?: string;
   icon?: string;
   label: string;
   className?: string;
+  onClick?: () => void;
 };
 const Button = ({ type, icon, label, className }: ButtonProps) => {
   return (

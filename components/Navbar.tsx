@@ -11,7 +11,7 @@ interface SubLink {
   href: string;
   key: string;
   label: string;
-  description?: string; // Added description
+  description?: string;
 }
 
 interface NavLink {
@@ -77,7 +77,6 @@ const Navbar = () => {
                 activeDropdown === link.key &&
                 link.subLinks && (
                   <div className="absolute top-full left-0 w-screen bg-white shadow-lg z-20">
-                    {/* Content Wrapper */}
                     <div className="grid grid-cols-3 gap-8 p-8">
                       {link.subLinks.map((subLink) => (
                         <div
@@ -106,13 +105,15 @@ const Navbar = () => {
       </ul>
 
       <div className="ml-auto bg-orange-500 p-2 rounded-md sm:mr-6">
-        <Button
-          type="button"
-          label="Get a Quote"
-          className={`${
-            scrolled ? "text-white" : "text-sky-950"
-          } py-1 px-3 text-sm`}
-        />
+        <Link href="/Contact">
+          <Button
+            type="button"
+            label="Get a Quote"
+            className={`${
+              scrolled ? "text-white" : "text-sky-950"
+            } py-1 px-3 text-sm`}
+          />
+        </Link>
       </div>
 
       <Image
