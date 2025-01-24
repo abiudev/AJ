@@ -6,7 +6,7 @@ import { guarantees } from "@/constants";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-16  px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <motion.span
@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
             className="text-gray-600 mb-8"
           ></motion.p>
 
-          <div className="relative rounded-full overflow-hidden">
+          <div className="relative  rounded-full overflow-hidden">
             <Image
               src="/videography.png"
               alt="Business professional working"
@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-8 mt-12 lg:mt-0">
+        <div className="grid text-2xl sm:grid-cols-2 gap-8 mt-12 lg:mt-0">
           {guarantees.map((guarantee, index) => (
             <GuaranteeCard
               key={index}

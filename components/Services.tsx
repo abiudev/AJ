@@ -102,7 +102,7 @@ export default function ServicesSection() {
                 Get Started
               </motion.a>
               <motion.a
-                href={`${currentService?.href}#details`}
+                href={`${currentService?.href}`}
                 className="px-6 py-3 bg-white text-orange-500 border border-orange-500 rounded-lg hover:bg-orange-50 transition-colors duration-200"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -51,12 +51,12 @@ export const NAV_LINKS = [
     ],
   },
 
-  { href: "/pricing", key: "pricing", label: "Pricing" },
-  { href: "/contact-us", key: "contact_us", label: "Contact Us" },
+  { href: "/Contact", key: "pricing", label: "Pricing" },
+  { href: "/Contact", key: "contact_us", label: "Contact Us" },
 ];
 export const Services = [
   {
-    href: "/services/Photography",
+    href: "/Services/photography",
     key: "photography",
     label: "Photography",
     description:
@@ -64,7 +64,7 @@ export const Services = [
     image: "/photography.jpg",
   },
   {
-    href: "/services/Videography",
+    href: "/Services/videography",
     key: "videography",
     label: "Videography",
     description:
@@ -72,7 +72,7 @@ export const Services = [
     image: "/videography.png",
   },
   {
-    href: "/services/Corporate Event Management",
+    href: "/Services/corporate",
     key: "corporateEventManagement",
     label: "Corporate Event Management",
     description:
@@ -80,7 +80,7 @@ export const Services = [
     image: "/event.png",
   },
   {
-    href: "/services/Corporate Event Coverage",
+    href: "/Services/corporate",
     key: "eventCoverage",
     label: "Corporate Event Coverage",
     description:
@@ -88,7 +88,7 @@ export const Services = [
     image: "/coverage.png",
   },
   {
-    href: "/services/Web Development",
+    href: "/Services/webdev",
     key: "webDevelopment",
     label: "Web Development",
     description:
@@ -96,7 +96,7 @@ export const Services = [
     image: "/webdev.png",
   },
   {
-    href: "/services/rapporteur",
+    href: "/Services/rapporteur",
     key: "rapporteurServices",
     label: "Rapporteur Services",
     description:

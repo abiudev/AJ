@@ -6,6 +6,9 @@ import { NAV_LINKS } from "@/constants";
 import Button from "./button";
 import { useEffect, useState } from "react";
 import { IoIosArrowDown, IoMdClose } from "react-icons/io";
+import { Poppins } from "next/font/google";
+
+const poppinsFont = Poppins({ subsets: ["latin"], weight: "400" });
 
 interface SubLink {
   href: string;
@@ -39,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out bg-white !sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out bg-white sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
         scrolled
           ? "bg-white sm:bg-sky-950 md:bg-sky-950 lg:bg-white xl:bg-white"
           : "bg-sky-950 sm:bg-white md:bg-white lg:bg-sky-950 xl:bg-sky-950"
@@ -55,7 +58,9 @@ const Navbar = () => {
         />
       </Link>
 
-      <ul className="hidden lg:flex text-black h-full gap-6 ml-20">
+      <ul
+        className={`hidden lg:flex text-lg h-full gap-6 ml-20 ${poppinsFont.className}`}
+      >
         {NAV_LINKS.map((link: NavLink) => (
           <li
             key={link.key}

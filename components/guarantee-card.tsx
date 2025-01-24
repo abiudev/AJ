@@ -18,10 +18,10 @@ export default function GuaranteeCard({
       transition={{ duration: 0.5, delay }}
       className="relative"
     >
-      <div className="absolute -top-8 right-4 text-red-500 text-2xl font-bold"></div>
+      <div className="absolute -top-8 right-4 text-red-500  font-bold"></div>
       <div className="bg-orange-50  rounded-lg p-6 shadow-sm">
         <h3 className="text-xl text-orange-500 font-bold mb-2">{header}</h3>
-        <p className="text-gray-700 text-sm">{text}</p>
+        <p className="text-gray-700 text-lg">{text}</p>
       </div>
       <div className="absolute -z-10 top-0 right-0 w-24 h-24">
         <svg viewBox="0 0 100 100" className="w-full h-full fill-red-50">

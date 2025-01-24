@@ -82,10 +82,6 @@ export default function Page() {
                 </div>
               </div>
             </div>
-
-            <button className="rounded-md bg-orange-500 px-6 py-3 text-white transition-colors hover:bg-[#5a9440]">
-              Contact Us Today
-            </button>
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
@@ -98,6 +94,14 @@ export default function Page() {
             />
           </div>
         </div>
+      </div>
+      <div className="mb-12 ml-4">
+        <a
+          href="/Contact"
+          className="rounded-md bg-orange-500 px-4 py-3 lg:ml-80   text-white transition-colors hover:bg-sky-950"
+        >
+          Contact Us
+        </a>
       </div>
     </div>
   );
