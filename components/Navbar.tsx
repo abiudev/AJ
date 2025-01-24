@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out bg-white sm:bg-sky-950 md:bg-sky-950 lg:bg-sky-950 xl:bg-sky-950 ${
         scrolled
-          ? "bg-white sm:bg-sky-950 md:bg-sky-950 lg:bg-white xl:bg-white"
+          ? "bg-white !sm:bg-sky-950 md:bg-sky-950 lg:bg-white xl:bg-white"
           : "bg-sky-950 sm:bg-white md:bg-white lg:bg-sky-950 xl:bg-sky-950"
       } flex items-center justify-start max-container py-1`}
     >
@@ -81,8 +81,8 @@ const Navbar = () => {
               {link.key === "services" &&
                 activeDropdown === link.key &&
                 link.subLinks && (
-                  <div className="absolute top-full left-0 w-screen bg-white shadow-lg z-20">
-                    <div className="grid grid-cols-3 gap-8 p-8">
+                  <div className="absolute top-full left-2 w-screen ml-0 bg-white shadow-lg rounded-lg z-20">
+                    <div className="grid grid-cols-4 gap-8 p-8">
                       {link.subLinks.map((subLink) => (
                         <div
                           key={subLink.key}
@@ -90,7 +90,7 @@ const Navbar = () => {
                         >
                           <Link
                             href={subLink.href}
-                            className="font-medium text-lg text-gray-800 group-hover:text-blue-600"
+                            className="font-medium text-lg text-black group-hover:text-orange-600"
                           >
                             {subLink.label}
                           </Link>
