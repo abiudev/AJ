@@ -27,7 +27,7 @@ const Page = () => {
             <Cursor />
           </h2>
           <p
-            className={`lg:text-3xl ${abelFont.className} lg:leading-normal sm:leading-tight sm:text-2xl text-justify`}
+            className={`lg:text-3xl ${abelFont.className} lg:leading-normal sm:text-2xl  sm:leading-tight  text-justify`}
           >
             At{" "}
             <span
@@ -43,7 +43,7 @@ const Page = () => {
             we guarantee an unforgettable experience.
           </p>
 
-          <button className="bg-orange-500 text-white px-6 py-3 rounded-md mt-4">
+          <button className="bg-orange-500 text-white px-6 py-3 rounded-md ">
             Learn More
           </button>
         </div>
