@@ -13,6 +13,14 @@ export const NAV_LINKS = [
           "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
       },
       {
+        href: "/Services/digitalmarketing",
+        key: "digitalmarketing",
+        label: "Digital Marketing",
+        description:
+          "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
+      },
+      
+      {
         href: "/Services/videography",
         key: "videography",
         label: "Videography",
@@ -64,6 +72,15 @@ export const Services = [
     image: "/photography.jpg",
   },
   {
+    href: "/Services/digitalmarketing",
+    key: "digitalmarketing",
+    label: "Digital Marketing",
+    description:
+      "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
+      image: "/digital.jpg",
+  },
+  
+  {
     href: "/Services/videography",
     key: "videography",
     label: "Videography",
@@ -105,7 +122,12 @@ export const Services = [
   },
 ];
 export const serviceFeatures = {
-  photography: [
+  digitalmarketing: [
+    'Results-driven marketing strategies',
+'Targeted campaigns for maximum impact',
+'Data-backed insights for better conversion',
+'Creative content that engages and sells' ,
+ ], photography: [
     "High-quality and professional photos",
     "Fast turnaround time for deliveries",
     "Tailored photography packages for events",
