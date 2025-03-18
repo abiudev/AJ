@@ -9,7 +9,7 @@ export default function Page() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-3xl font-semibold leading-tight text-slate-800 md:text-4xl lg:text-5xl">
-                Build Exceptional Websites with AJ Media Web Development
+                Get fully opmized Websites and Quality Software with Our Web Development
                 Services
               </h1>
               <p className="text-lg text-slate-600">

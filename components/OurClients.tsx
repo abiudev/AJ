@@ -19,7 +19,7 @@ export default function OurClients({
     { src: "/superfoam.png", alt: "superfoam", width: 180, height: 90 },
     { src: "/victory.png", alt: "victory", width: 180, height: 90 },
     { src: "/hospitality.png", alt: "hospitality", width: 180, height: 90 },
-    { src: "/longonot.png", alt: "Client 4", width: 180, height: 90 },
+    { src: "/longonot.png", alt: "Client 4", width: 240, height: 120 },
     { src: "/impact.png", alt: "Client 4", width: 180, height: 90 },
   ],
 }: OurClientsProps) {
