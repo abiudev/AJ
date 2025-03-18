@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AJ APEX MEDIA",
-  description: "Connecting People, creating momerable stories",
+  description: "Drive Results with Smart Digital Marketing and Stunning Visuals",
 };
 
 export default function RootLayout({
