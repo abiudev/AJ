@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AJ APEX MEDIA",
+  title: "AJ Apex Media",
   description: "Drive Results with Smart Digital Marketing and Stunning Visuals",
 };
 
