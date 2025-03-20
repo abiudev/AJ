@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
             <h5 className="font-bold mb-2">Follow Us</h5>
             <ul className="flex space-x-4">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <a href="https://www.facebook.com/ajapexmedia" className="text-gray-400 hover:text-white">
                   Facebook
                 </a>
               </li>
