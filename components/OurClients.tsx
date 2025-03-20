@@ -27,12 +27,10 @@ export default function OurClients({
   const sliderRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Duplicate the logos array to create a seamless loop
     const duplicateLogos = () => {
       const container = sliderRef.current
       if (!container) return
 
-      // Clone the entire content for a seamless loop
       const content = container.innerHTML
       container.innerHTML = content + content
     }
@@ -43,7 +41,7 @@ export default function OurClients({
   return (
     <section className="w-full py-12 bg-gradient-to-r from-orange-200 via-white to-orange-200">
       <div className="container px-4 mx-auto text-center mb-8">
-        {title && <h2 className="text-3xl font-bold tracking-tight mb-3">{title}</h2>}
+        {title && <h2 className="text-3xl text-orange-500  font-bold tracking-tight mb-3">{title}</h2>}
       </div>
 
       <div className="container mx-auto px-2 overflow-hidden">
