@@ -59,7 +59,7 @@ const Navbar = () => {
       </Link>
 
       <ul
-        className={`hidden lg:flex text-lg h-full gap-6 ml-20 ${poppinsFont.className}`}
+        className={`hidden lg:flex text-sm h-full gap-6 ml-20 ${poppinsFont.className}`}
       >
         {NAV_LINKS.map((link: NavLink) => (
           <li
@@ -110,7 +110,7 @@ const Navbar = () => {
       </ul>
 
       <div className="ml-auto bg-orange-500 p-2 rounded-md sm:mr-6">
-        <Link href="/Contact">
+        <Link href="/contact">
           <Button
             type="button"
             label="Get a Quote"
