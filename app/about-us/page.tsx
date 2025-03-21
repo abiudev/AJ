@@ -43,7 +43,7 @@ export default function AboutUs() {
               <p className="text-white/90 text-lg md:text-xl mb-6">
                 We are a leading <strong>digital marketing agency in Nairobi, Kenya</strong>, dedicated to elevating
                 brands through innovative strategies and creative solutions. Our team of experts works tirelessly to
-                help businesses across <strong>Kenya</strong> stand out in today's competitive digital landscape.
+                help businesses across <strong>Kenya</strong> stand out in today&apos;s competitive digital landscape.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default function AboutUs() {
                 <h3 className="text-xl font-bold text-orange-400 mb-3">Professional Videography</h3>
                 <p className="text-white/80">
                   Our <strong>Nairobi-based</strong> expert videographers create stunning, high-quality video content
-                  that tells your brand's story and engages your audience throughout <strong>Kenya</strong> and beyond.
+                  that tells your brand&apos;s story and engages your audience throughout <strong>Kenya</strong> and beyond.
                 </p>
               </article>
 
