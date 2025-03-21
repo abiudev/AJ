@@ -2,7 +2,6 @@
 import Head from "next/head"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import router from "next/router"
 import Link from "next/link"
 
 export default function AboutUs() {
