@@ -1,6 +1,6 @@
 "use client";
 
-import ServicesSection from "@/components/Services";
+import ServicesSection from "@/components/services";
 import WhyChooseUs from "@/components/whyUs";
 
 

@@ -143,17 +143,17 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-sky-950 text-white pt-28 pb-12 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-xl font-medium mb-4">Contact Us</h2>
+        <h1 className="text-4xl font-bold text-center   bg-gradient-to-r from-purple-400 via-orange-500 to-blue-500 mb-4">Contact Us</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-7 space-y-5">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+              <h2 className="text-3xl md:text-3xl font-bold mb-2">
                 Get in Touch:{" "}
                 <span className="bg-gradient-to-r from-purple-400 via-orange-500 to-blue-500 bg-clip-text text-transparent">
                   We&apos;re Here to Answer Your Questions
                 </span>
-              </h1>
+              </h2>
             </div>
 
            
