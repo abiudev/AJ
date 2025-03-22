@@ -8,42 +8,42 @@ export const NAV_LINKS = [
     label: "Services",
     subLinks: [
       { 
-        href: "/Services/photography", 
+        href: "/services/photography", 
         key: "photography", 
         label: "Photography", 
         description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
         icon: <IoCamera className="h-5 w-5 text-orange-500" />
       },
       { 
-        href: "/Services/digital-marketing", 
+        href: "/services/digital-marketing", 
         key: "digitalmarketing", 
         label: "Digital Marketing", 
         description: "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
         icon: <FaChartLine className="h-5 w-5 text-orange-500" />
       },
       { 
-        href: "/Services/videography", 
+        href: "/services/videography", 
         key: "videography", 
         label: "Videography", 
         description: "Our videography services bring your events to life, providing captivating videos that tell your story with precision and creativity.",
         icon: <IoVideocam className="h-5 w-5 text-orange-500" />
       },
       { 
-        href: "/Services/event-management", 
+        href: "/services/event-management", 
         key: "corporateEventManagement", 
         label: "Corporate Event Management", 
         description: "We specialize in organizing and managing corporate events, ensuring flawless execution and memorable experiences for your attendees.",
         icon: <IoCalendar className="h-5 w-5 text-orange-500" />
       },
       { 
-        href: "/Services/software-development", 
+        href: "/services/software-development", 
         key: "softwareDevelopment", 
         label: "Software Development", 
         description: "We design and develop custom websites that are responsive, user-friendly, and tailored to your business goals.",
         icon: <IoCodeSlash className="h-5 w-5 text-orange-500" />
       },
       { 
-        href: "/Services/rapporteuring-services", 
+        href: "/services/rapporteuring-services", 
         key: "rapporteurServices", 
         label: "Rapporteur Services", 
         description: "Our rapporteur services provide accurate and detailed documentation of meetings, conferences, and events, ensuring that every important point is captured.",
@@ -57,42 +57,42 @@ export const NAV_LINKS = [
 
 export const Services = [
   {
-    href: "/Services/photography",
+    href: "/services/photography",
     key: "photography",
     label: "Photography",
     description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
     image: "/photography.jpg",
   },
   {
-    href: "/Services/digital-marketing",
+    href: "/services/digital-marketing",
     key: "digitalmarketing",
     label: "Digital Marketing",
     description: "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
     image: "/digital.jpg",
   },
   {
-    href: "/Services/videography",
+    href: "/services/videography",
     key: "videography",
     label: "Videography",
     description: "Our videography services bring your events to life, providing captivating videos that tell your story with precision and creativity.",
     image: "/videography.png",
   },
   {
-    href: "/Services/event-management",
+    href: "/services/event-management",
     key: "corporateEventManagement",
     label: "Corporate Event Management",
     description: "We specialize in organizing and managing corporate events, ensuring flawless execution and memorable experiences for your attendees.",
     image: "/event.png",
   },
   {
-    href: "/Services/software-development",
+    href: "/services/software-development",
     key: "webDevelopment",
     label: "Web Development",
     description: "We design and develop custom websites that are responsive, user-friendly, and tailored to your business goals.",
     image: "/webdev.png",
   },
   {
-    href: "/Services/rapporteuring-services",
+    href: "/services/rapporteuring-services",
     key: "rapporteurServices",
     label: "Rapporteur Services",
     description: "Our rapporteur services provide accurate and detailed documentation of meetings, conferences, and events, ensuring that every important point is captured.",
