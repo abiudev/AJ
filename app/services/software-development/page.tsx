@@ -72,7 +72,7 @@ export default function Page() {
                     </h3>
                     <p className="text-slate-600">
                       Stand out with unique, tailor-made designs that reflect
-                      your brand identity and captivate your audience. We
+                       identity and captivate your audience. We
                       collaborate with you to create a design that speaks
                       directly to your target market, blending aesthetics and
                       functionality. Whether it is a bold new look or a subtle
