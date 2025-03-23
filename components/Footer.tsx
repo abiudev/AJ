@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <h5 className="font-bold mb-2">Company</h5>
             <ul>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <a href="/about-us" className="text-gray-400 hover:text-white">
                   About Us
                 </a>
               </li>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/Contact" className="text-gray-400 hover:text-white">
+                <a href="/contact" className="text-gray-400 hover:text-white">
                   Contact Us
                 </a>
               </li>
