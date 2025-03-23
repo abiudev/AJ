@@ -1,51 +1,43 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Check } from "lucide-react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Services } from "@/constants";
-import { serviceFeatures } from "@/constants";
+import { useState } from "react"
+import { Check } from "lucide-react"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { Services as ServicesData } from "@/constants"
+import { serviceFeatures } from "@/constants"
 
-interface Services {
-  href: string;
-  key: string;
-  label: string;
-  description: string;
-  image: string;
-}
-type ServiceKey = keyof typeof serviceFeatures;
+type ServiceKey = keyof typeof serviceFeatures
 
 export default function ServicesSection() {
-  const [selectedService, setSelectedService] = useState<ServiceKey>(
-    Services[0].key as ServiceKey
-  );
-  const currentService = Services.find((s) => s.key === selectedService);
-  const features = serviceFeatures[selectedService] || [];
+  const [selectedService, setSelectedService] = useState<ServiceKey>(ServicesData[0].key as ServiceKey)
+  const currentService = ServicesData.find((s) => s.key === selectedService)
+  const features = serviceFeatures[selectedService] || []
 
   return (
     <section className="py-12 bg-orange-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Our Services
-        </h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {Services.map((service) => (
-            <motion.button
-              key={service.key}
-              onClick={() => setSelectedService(service.key as ServiceKey)}
-              className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                selectedService === service.key
-                  ? "bg-orange-500  text-white shadow-lg"
-                  : "bg-white text-gray-600 border-2 border-orange-100 hover:bg-orange-50"
-              }`}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {service.label}
-            </motion.button>
-          ))}
+
+        <div className="mb-16 overflow-x-auto pb-4 -mx-4 px-4">
+          <div className="flex gap-3 justify-center min-w-max">
+            {ServicesData.map((service) => (
+              <motion.button
+                key={service.key}
+                onClick={() => setSelectedService(service.key as ServiceKey)}
+                className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex-shrink-0 ${
+                  selectedService === service.key
+                    ? "bg-orange-500 text-white shadow-lg"
+                    : "bg-white text-gray-600 border-2 border-orange-100 hover:bg-orange-50"
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {service.label}
+              </motion.button>
+            ))}
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -62,7 +54,7 @@ export default function ServicesSection() {
               fill
               className="object-cover transition-opacity duration-300"
               sizes="(max-width: 768px) 100vw, 50vw"
-              priority={selectedService === Services[0].key}
+              priority={selectedService === ServicesData[0].key}
             />
           </motion.div>
 
@@ -73,12 +65,8 @@ export default function ServicesSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-3xl font-bold mb-4 text-gray-800">
-                {currentService?.label}
-              </h3>
-              <p className="text-gray-600 text-lg mb-8">
-                {currentService?.description}
-              </p>
+              <h3 className="text-3xl font-bold mb-4 text-gray-800">{currentService?.label}</h3>
+              <p className="text-gray-600 text-lg mb-8">{currentService?.description}</p>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {features.map((feature, index) => (
@@ -114,5 +102,6 @@ export default function ServicesSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
+

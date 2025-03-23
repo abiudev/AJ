@@ -1,114 +1,58 @@
-"use client"
+"use client";
+import Image from "next/image";
+import { useRef } from "react";
 
-import { useEffect, useRef } from "react"
-import Image from "next/image"
+const logos = ["/1.png", "/2.png", "/3.png", "/4.png"];
 
-interface OurClientsProps {
-  title?: string
-  subtitle?: string
-  logos?: {
-    src: string
-    alt: string
-    width: number
-    height: number
-  }[]
-}
-
-export default function OurClients({
-  title = "Our Trusted Clients",
-  logos = [
-    { src: "/superfoam.png", alt: "superfoam", width: 180, height: 90 },
-    { src: "/victory.png", alt: "victory", width: 180, height: 90 },
-    { src: "/hospitality.png", alt: "hospitality", width: 180, height: 90 },
-    { src: "/longonot.png", alt: "Client 4", width: 240, height: 120 },
-    { src: "/impact.png", alt: "Client 5", width: 180, height: 90 },
-  ],
-}: OurClientsProps) {
-  const sliderRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const duplicateLogos = () => {
-      const container = sliderRef.current
-      if (!container) return
-
-      const content = container.innerHTML
-      container.innerHTML = content + content
-    }
-
-    duplicateLogos()
-  }, [])
+export default function ClientsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="w-full py-12 bg-gradient-to-r from-orange-200 via-white to-orange-200">
-      <div className="container px-4 mx-auto text-center mb-8">
-        {title && <h2 className="text-3xl text-orange-500  font-bold tracking-tight mb-3">{title}</h2>}
-      </div>
+    <section className="w-full bg-white py-12 px-6">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start">
+        {/* Left: Text Content */}
+        <div className="md:w-1/3 text-center md:text-left">
+          <h2 className="text-3xl md:text-3xl font-semibold text-gray-900 mb-4 relative">
+            Our Clients
+            <span className="block w-10 h-1 bg-orange-500 mt-2"></span>
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg">
+            We have worked with renowned names. From hotels, offices, and homes, we have worked with clients from all backgrounds.
+          </p>
+        </div>
 
-      <div className="container mx-auto px-2 overflow-hidden">
-        <div className="logo-slider-container">
-          <div ref={sliderRef} className="logo-slider">
+        {/* Right: Logos Section */}
+        <div className="md:w-2/3 mt-6 md:mt-0">
+          {/* Desktop View (Grid) */}
+          <div className="hidden sm:grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center">
             {logos.map((logo, index) => (
-              <div key={`logo-${index}`} className="logo-item">
-                <Image
-                  src={logo.src || "/placeholder.svg"}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className="object-contain w-full h-auto max-w-[180px] md:max-w-[240px] lg:max-w-[320px] xl:max-w-[400px]"
-                />
+              <div key={index} className="flex items-center justify-center">
+                <Image src={logo} alt={`Client logo ${index + 1}`} width={120} height={60} className="object-contain grayscale hover:grayscale-0 transition" />
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile View (Scrollable) */}
+          <div ref={scrollRef} className="sm:hidden flex gap-6 overflow-x-auto scroll-smooth py-3 px-2">
+            {logos.map((logo, index) => (
+              <div key={index} className="flex items-center justify-center min-w-[100px]">
+                <Image src={logo} alt={`Client logo ${index + 1}`} width={100} height={50} className="object-contain grayscale hover:grayscale-0 transition" />
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <style jsx global>{`
-        .logo-slider-container {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
+      <style jsx>{`
+        /* Hide scrollbar but allow scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
         }
-        
-        .logo-slider {
-          display: flex;
-          width: fit-content;
-          animation: slide 20s linear infinite;
-        }
-        
-        .logo-item {
-          flex-shrink: 0;
-          padding: 0 1.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        
-        @keyframes slide {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        @media (min-width: 768px) {
-          .logo-item {
-            padding: 0 2rem;
-          }
-        }
-        
-        @media (min-width: 1024px) {
-          .logo-item {
-            padding: 0 3rem;
-          }
-          .logo-item img {
-            height: auto;
-            max-height: 180px;
-          }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>
-  )
+  );
 }
-

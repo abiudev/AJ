@@ -19,9 +19,9 @@ export default function GuaranteeCard({
       className="relative"
     >
       <div className="absolute -top-8 right-4 text-red-500  font-bold"></div>
-      <div className="bg-orange-50  rounded-lg p-6 shadow-sm">
+      <div className="bg-sky-950  rounded-lg p-6 shadow-sm">
         <h3 className="text-xl text-orange-500 font-bold mb-2">{header}</h3>
-        <p className="text-gray-700 text-lg">{text}</p>
+        <p className="text-white text-sm">{text}</p>
       </div>
       <div className="absolute -z-10 top-0 right-0 w-24 h-24">
         <svg viewBox="0 0 100 100" className="w-full h-full fill-red-50">

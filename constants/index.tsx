@@ -7,19 +7,20 @@ export const NAV_LINKS = [
     key: "services",
     label: "Services",
     subLinks: [
-      { 
-        href: "/services/photography", 
-        key: "photography", 
-        label: "Photography", 
-        description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
-        icon: <IoCamera className="h-5 w-5 text-orange-500" />
-      },
+      
       { 
         href: "/services/digital-marketing", 
         key: "digitalmarketing", 
         label: "Digital Marketing", 
         description: "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
         icon: <FaChartLine className="h-5 w-5 text-orange-500" />
+      },
+      { 
+        href: "/services/photography", 
+        key: "photography", 
+        label: "Photography", 
+        description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
+        icon: <IoCamera className="h-5 w-5 text-orange-500" />
       },
       { 
         href: "/services/videography", 
@@ -56,19 +57,20 @@ export const NAV_LINKS = [
 ];
 
 export const Services = [
-  {
-    href: "/services/photography",
-    key: "photography",
-    label: "Photography",
-    description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
-    image: "/photography.jpg",
-  },
+
   {
     href: "/services/digital-marketing",
     key: "digitalmarketing",
     label: "Digital Marketing",
     description: "We create data-driven digital marketing strategies that boost brand visibility, drive engagement, and maximize conversions.",
     image: "/digital.jpg",
+  },
+  {
+    href: "/services/software-development",
+    key: "webDevelopment",
+    label: "Web Development",
+    description: "We design and develop custom websites that are responsive, user-friendly, and tailored to your business goals.",
+    image: "/webdev.png",
   },
   {
     href: "/services/videography",
@@ -84,12 +86,13 @@ export const Services = [
     description: "We specialize in organizing and managing corporate events, ensuring flawless execution and memorable experiences for your attendees.",
     image: "/event.png",
   },
+  
   {
-    href: "/services/software-development",
-    key: "webDevelopment",
-    label: "Web Development",
-    description: "We design and develop custom websites that are responsive, user-friendly, and tailored to your business goals.",
-    image: "/webdev.png",
+    href: "/services/photography",
+    key: "photography",
+    label: "Photography",
+    description: "We offer professional photography services to capture the essence of your special moments and events with high-quality imagery.",
+    image: "/photography.jpg",
   },
   {
     href: "/services/rapporteuring-services",
